@@ -88,3 +88,16 @@ erDiagram
 - `GET /api/projects/:id/tasks` (Auth)
 - `PATCH /api/tasks/:id/status` (Auth)
 - `PUT /api/tasks/:id` (Auth)
+
+## System Architecture
+(Add image: architecture.png)
+
+## Database ER Diagram
+(Add image: er-diagram.png)
+
+## API List
+1. POST /auth/register-tenant
+2. POST /auth/login
+3. GET /users
+...
+19. GET /audit-logs

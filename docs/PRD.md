@@ -57,3 +57,24 @@
 3.  **Scalability**: Architecture must support horizontal scaling (stateless backend).
 4.  **Isolation**: Tenant data must be logically isolated using `tenant_id`.
 5.  **Availability**: System should target 99.9% uptime (Dockerized health checks).
+
+## 1. Multi-Tenancy Models (800+ words)
+
+### Shared Database, Shared Schema
+### Shared Database, Separate Schema
+### Separate Database per Tenant
+
+| Model | Pros | Cons | Use Cases |
+|------|------|------|----------|
+| Shared Schema | Low cost | Data isolation risk | Startups |
+| Separate Schema | Better isolation | Complex migrations | Mid-scale SaaS |
+| Separate DB | Strong isolation | High cost | Enterprise SaaS |
+
+## 2. Chosen Model Justification (500+ words)
+Explain WHY you chose Shared DB + tenant_id.
+
+## 3. Scalability & Security Considerations (400+ words)
+- Horizontal scaling
+- Indexing on tenant_id
+- JWT isolation
+- Row-level security

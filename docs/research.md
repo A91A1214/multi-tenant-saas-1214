@@ -1,4 +1,24 @@
 # Research & Requirements Analysis
+## 1. Multi-Tenancy Models (800+ words)
+
+### Shared Database, Shared Schema
+### Shared Database, Separate Schema
+### Separate Database per Tenant
+
+| Model | Pros | Cons | Use Cases |
+|------|------|------|----------|
+| Shared Schema | Low cost | Data isolation risk | Startups |
+| Separate Schema | Better isolation | Complex migrations | Mid-scale SaaS |
+| Separate DB | Strong isolation | High cost | Enterprise SaaS |
+
+## 2. Chosen Model Justification (500+ words)
+Explain WHY you chose Shared DB + tenant_id.
+
+## 3. Scalability & Security Considerations (400+ words)
+- Horizontal scaling
+- Indexing on tenant_id
+- JWT isolation
+- Row-level security
 
 ## Multi-Tenancy Analysis
 
@@ -9,6 +29,7 @@ We evaluated three common approaches for multi-tenancy:
 | **Shared Database, Shared Schema** | All tenants share the same tables. Rows are distinguished by a `tenant_id` column. | - Easiest to implement and maintain.<br>- Easiest data aggregation/analytics.<br>- Lowest infrastructure cost.<br>- fast migration updates. | - Weakest isolation (developer error can expose data).<br>- Performance bottlenecks if not indexed properly.<br>- Backup/Restore for single tenant is hard. |
 | **Shared Database, Separate Schemas** | One DB, but each tenant has their own schema (e.g., `tenant_a.users`, `tenant_b.users`). | - Better isolation than shared schema.<br>- Recovering one tenant's data is easier.<br>- Good balance of cost/isolation. | - Complex migration management (must run on N schemas).<br>- Higher resource overhead than shared schema.<br>- Connection pooling challenges. |
 | **Separate Databases** | Each tenant has their own dedicated database instance. | - Strongest isolation.<br>- Scalable (can move tenants to different servers).<br>- Best for enterprise security requirements. | - Highest cost.<br>- Most complex infrastructure.<br>- Hardest to maintain and aggregate data. |
+
 
 **Chosen Approach: Shared Database + Shared Schema**
 For this SaaS application, we have chosen the **Shared Database, Shared Schema** approach.
