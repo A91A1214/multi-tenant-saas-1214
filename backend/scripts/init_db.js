@@ -19,7 +19,7 @@ const runMigrations = async () => {
         console.log('Connected to database. Starting migrations...');
 
         // Get migration files
-        const migrationsDir = path.join(__dirname, '../migrations');
+        const migrationsDir = path.join(__dirname, '../src/db/migrations');
         const files = fs.readdirSync(migrationsDir).sort(); // Ensure order
 
         for (const file of files) {

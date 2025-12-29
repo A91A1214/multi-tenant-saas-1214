@@ -13,7 +13,7 @@ COPY . .
 EXPOSE 5000
 
 # Install netcat for wait-for-it script (optional but good for checking db)
-RUN apk add --no-cache netcat-openbsd
+RUN apk add --no-cache netcat-openbsd curl
 
 # Default command (will be overridden by entrypoint or CMD if needed)
 # We will use a custom command in docker-compose or here to run migrations first

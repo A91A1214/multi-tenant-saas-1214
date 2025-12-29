@@ -37,7 +37,7 @@ services:
     # We assume 'npm run db:init' and 'npm start' exist or we chain them
     command: sh -c "force_color_prompt=yes npm run db:init && npm start"
     healthcheck:
-      test: [ "CMD", "nc", "-z", "localhost", "5000" ]
+      test: [ "CMD", "curl", "-f", "http://localhost:5000/api/health" ]
       interval: 10s
       timeout: 5s
       retries: 5

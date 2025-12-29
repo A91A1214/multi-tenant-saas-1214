@@ -50,12 +50,14 @@ The `docker-compose up` command automatically runs migrations and seeds the data
 ## Login Credentials (Seed Data)
 - **Super Admin**: `superadmin@system.com` / `Admin@123` (No tenant login)
 - **Tenant Admin**: `admin@demo.com` / `Demo@123` (Tenant: `demo`)
-- **User**: `user1@demo.com` / `User@123` (Tenant: `demo`)
+- **User**: `user2@demo.com` / `User@123` (Tenant: `demo`)
 
 ## API Documentation
-See `docs/architecture.md` and source code `routes/` for details.
+See `docs/API.md` for detailed endpoint documentation.
 All API responses follow `{ success: boolean, data: any, message: string }`.
 
-## Submission
-- **GitHub Repo**: [Link]
-- **Video Demo**: [Link]
+## Demo Video
+[Link to YouTube Demo](https://youtube.com/...)
+
+
+

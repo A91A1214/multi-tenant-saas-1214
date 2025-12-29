@@ -1,5 +1,4 @@
--- Up Migration
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   tenant_id UUID REFERENCES tenants(id) ON DELETE CASCADE,
   email VARCHAR(255) NOT NULL,
@@ -9,8 +8,5 @@ CREATE TABLE users (
   is_active BOOLEAN DEFAULT TRUE,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE(tenant_id, email)
+  UNIQUE (tenant_id, email)
 );
-
--- Down Migration
-DROP TABLE IF EXISTS users;
