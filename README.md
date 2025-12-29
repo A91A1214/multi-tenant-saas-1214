@@ -33,10 +33,11 @@ A production-ready, multi-tenant SaaS application for project and task managemen
 1. Clone the repository.
 2. Run the application:
    ```bash
-   docker-compose up -d
-   ```
-3. Wait for services to be healthy (approx 30s).
-4. Access the frontend at [http://localhost:3000](http://localhost:3000).
+   docker-compose up
+App URLs:
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
+
 
 ### Environment Variables
 See `backend/.env.example`.
@@ -56,8 +57,6 @@ The `docker-compose up` command automatically runs migrations and seeds the data
 See `docs/API.md` for detailed endpoint documentation.
 All API responses follow `{ success: boolean, data: any, message: string }`.
 
-## Demo Video
-[Link to YouTube Demo](https://youtube.com/...)
 
 
 
